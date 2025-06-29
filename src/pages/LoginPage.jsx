@@ -1,6 +1,6 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
-import LoginModal from "../components/LoginModal";
+import LoginModal from '../components/HomeComponents/LoginModal';
 
 const LoginPage = () => {
   const [searchParams] = useSearchParams();
