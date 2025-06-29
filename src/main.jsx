@@ -1,14 +1,16 @@
-// import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { BrowserRouter } from 'react-router-dom'
-import CourseContextProvider from './context/CourseContextProvider.jsx'
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App.jsx';
+import { BrowserRouter } from 'react-router-dom';
+import CourseContextProvider from './context/CourseContextProvider.jsx';
+import { AuthProvider } from './context/AuthContext.jsx'; // ✅ Import this
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <CourseContextProvider>
+    <AuthProvider> {/* ✅ Wrap app with AuthProvider */}
+      <CourseContextProvider>
         <App />
-    </CourseContextProvider>
+      </CourseContextProvider>
+    </AuthProvider>
   </BrowserRouter>
-)
+);
